@@ -19,6 +19,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/python-3.11-blue?logo=python&logoColor=white" alt="Python 3.11"/>
+  <img src="https://img.shields.io/badge/LangChain-LCEL-important?logo=langchain" alt="LangChain"/>
   <img src="https://img.shields.io/badge/LangGraph-Agentic-blueviolet" alt="LangGraph"/>
   <img src="https://img.shields.io/badge/Tavily-Search-orange" alt="Tavily"/>
   <img src="https://img.shields.io/badge/SerpAPI-Jobs-green" alt="SerpAPI"/>
