@@ -1,0 +1,30 @@
+# DeepAgent
+
+## Description
+Multi-agent AI toolkit with research and job search capabilities using LangGraph, Tavily, and SerpAPI.
+
+## Tech Stack
+Python 3.11, LangGraph, LangChain, Tavily, SerpAPI, Gemini 2.5 Flash, Mistral Small, Streamlit, SMTP (Gmail)
+
+## Core Files
+- app.py: Streamlit UI with two tabs (Research Agent + Job Search Agent)
+- research_agent.py: LangGraph agent with 4 nodes — research (Tavily), draft (Gemini 2.5 Flash), critique (Mistral), email. Conditional revision loop up to 2 iterations.
+- job_agent.py: LangGraph agent with 4 nodes — search (Tavily + SerpAPI Google Jobs), filter (Mistral JSON), cover_letter (Mistral), email (SMTP).
+
+## Key Patterns
+- StateGraph with TypedDict state, 4 nodes each, one conditional edge (research_agent)
+- Tavily search_depth="advanced", max_results=8, include_raw_content=True
+- SerpAPI engine="google_jobs" for job listings
+- Mistral JSON output parsed with fallback to regex URL extraction
+- SMTP with STARTTLS (port 587) fallback to SSL (port 465)
+- Job filter: regex-based exclusion of aggregators, social media, salary pages
+
+## Entry Point
+streamlit run app.py
+
+## API Keys (.env)
+TAVILY_API_KEY, SERPAPI_KEY, GOOGLE_API_KEY, MISTRAL_API_KEY, EMAIL_ADDRESS, EMAIL_PASSWORD
+
+## CLI Usage
+python research_agent.py "What is LangGraph?"
+python job_agent.py
