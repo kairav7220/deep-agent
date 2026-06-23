@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=DeepAgent&fontSize=50&fontAlignY=35&desc=Multi-agent%20AI%20Toolkit%20%E2%80%94%20Research%20%2B%20Job%20Search&descAlignY=55" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=DeepAgent&fontSize=50&fontAlignY=35&desc=Two%20Agents%20%E2%80%94%20Research%20%2B%20Job%20Search&descAlignY=55" />
 </p>
 
 <p align="center">
