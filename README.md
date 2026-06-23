@@ -44,22 +44,18 @@ Two autonomous LangGraph agents — one for research, one for job search. Both c
 
 ```mermaid
 flowchart LR
-  UI["Streamlit UI"] --> Research["Research Agent"]
-  UI --> Job["Job Search Agent"]
+  UI["Streamlit UI"]
   
-  subgraph Research["Research Agent"]
-    R1["Research Node<br/>(Tavily search)"] --> R2["Draft Node<br/>(Gemini 2.5 Flash)"]
-    R2 --> R3["Critique Node<br/>(Mistral)"]
-    R3 -->|"APPROVED?"| R4["Email Node"]
-    R3 -->|"Revise"| R1
-  end
+  UI --> R1["Research<br/>(Tavily)"]
+  R1 --> R2["Draft<br/>(Gemini 2.5 Flash)"]
+  R2 --> R3["Critique<br/>(Mistral)"]
+  R3 -->|"Revise"| R1
+  R3 -->|"Approved"| R4["Email"]
   
-  subgraph Job["Job Search Agent"]
-    J1["Search Node<br/>(Tavily + SerpAPI)"]
-    J1 --> J2["Filter Node<br/>(Mistral)"]
-    J2 --> J3["Cover Letter Node<br/>(Mistral)"]
-    J3 --> J4["Email Node"]
-  end
+  UI --> J1["Search<br/>(Tavily + SerpAPI)"]
+  J1 --> J2["Filter<br/>(Mistral)"]
+  J2 --> J3["Cover Letter<br/>(Mistral)"]
+  J3 --> J4["Email"]
 ```
 
 | Component | Research Agent | Job Search Agent |
